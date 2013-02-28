@@ -26,9 +26,15 @@
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header" role="banner">
+		
+		<div id="social-media-links">
+			<a href="http://www.facebook.com"><img id="facebook-link" src="<?php bloginfo( 'stylesheet_directory' );?>/images/bw_facebook_icon.png" alt="Our Facebook Page" /></a>
+			<a href="http://www.flickr.com"><img id="flickr-link" src="<?php bloginfo( 'stylesheet_directory' );?>/images/bw_flickr_icon.png" alt="Our Flickr Page" /></a>
+			<a href="http://www.twitter.com"><img id="twitter-link" src="<?php bloginfo( 'stylesheet_directory' );?>/images/bw_twitter_icon.png" alt="Our Twitter Feed" /></a>
+		</div>
+		
 		<hgroup>
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img id="tattooMuseum_logo" src="<?php bloginfo( 'stylesheet_directory' );?>/images/tattooMuseum_logo.gif" alt="Minneapolis Museum of Tattoos" /></a>
 		</hgroup>
 
 		<nav role="navigation" class="site-navigation main-navigation">
