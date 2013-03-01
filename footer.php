@@ -12,34 +12,42 @@
 	</div><!-- #main .site-main -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		
+	
+		<?php
+			$posts = get_posts(array(
+				'numberposts' => -1,
+				'category' => 3,
+			));
+		?>
+	
+		<?php while ( have_posts() ) : the_post(); ?>
 		<div id="museum-info">
 			<div class="black-box column1">
-				<h1>Hours</h1>
-				<p>Monday-Friday <span class="hours">10-8pm</span><br />
-				Saturday <span class="hours">10-10pm</span><br />
-				Sunday <span class="hours">CLOSED</span></p>
+				<h1><?php the_field( 'hours_title' ); ?></h1>
+				<p><?php the_field( 'days1' ); ?> <span class="hours"><?php the_field( 'hours1' ); ?></span><br />
+				<?php the_field( 'days2' ); ?> <span class="hours"><?php the_field( 'hours2' ); ?></span><br />
+				<?php the_field( 'days3' ); ?> <span class="hours"><?php the_field( 'hours3' ); ?></span></p>
 			</div>
 			
 			<div class="black-box column2">
-				<p>1234 Tattoo Lane<br />
-				Minneapolis, MN 55411<br />
-				612-555-5555<br />
-				info@mplstattoomuseum.com</p>
+				<p><?php the_field( 'address' ); ?><br />
+				<?php the_field( 'phone' ); ?></p>
+				<p><?php the_field( 'email' ); ?></p>
 			</div>
 			
 			<div class="black-box column3">
-				<p>Adults <span class="price">$12</span><br />
-				Seniors (65+) <span class="price">$7</span><br />
-				Under 12 <span class="price">Free</span></p>
+				<p><?php the_field( 'age_group1' ); ?> <span class="price"><?php the_field( 'price1' ); ?></span><br />
+				<?php the_field( 'age_group2' ); ?> <span class="price"><?php the_field( 'price2' ); ?></span><br />
+				<?php the_field( 'age_group3' ); ?> <span class="price"><?php the_field( 'price3' ); ?></span></p>
 			</div>
 			
 			<div class="black-box column4">
-				<h1>Coming this March:</h1>
-				<p>An inside look into the life and art of Egbert Engelbert (1920-1987)</p>
+				<h1><?php the_field( 'announcement_title' ); ?></h1>
+				<p><?php the_field( 'announcement' ); ?></p>
 			</div>
 		</div>
 		
+		<?php endwhile; // end of the loop. ?>
 		
 		
 		<div class="site-info">
